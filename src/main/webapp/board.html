@@ -171,7 +171,7 @@ function upkeepTime(json){
 		let mydate=(dateStr - date) / (1000 * 60 * 60 * 24);
 		json[i]['uDate']=Math.round((json[i]['uCycle']-mydate)*10)/10;
 		
-		if(json[i]['uDate']<=0){
+		if(json[i]['uDate']<0){
 			document.getElementById('bytm').style.color="red";
 			alert("你有需要保养机器！");
 			return;

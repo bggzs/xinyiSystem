@@ -61,8 +61,15 @@
 			}
 		},
 		success:function(data,Status){
+			record=data;
 			var obj=eval(data);
-			console.log({obj});
+			
+			obj.sort((a,b)=>{
+				let oDate1 = new Date(a.s_date);
+		        let oDate2 = new Date(b.s_date);
+		        return oDate2-oDate1;
+			})
+			
 			for(var i=0;i<obj.length;i++){
 			if(obj[i]["s_listType"]==null){
 				obj[i]["s_listType"]=' ';

@@ -79,7 +79,15 @@
 			}
 		},
 		success:function(data,Status){
+			record=data;
 			var obj=eval(data);
+			
+			obj.sort((a,b)=>{
+				let oDate1 = new Date(a.s_date);
+		        let oDate2 = new Date(b.s_date);
+		        return oDate2-oDate1;
+			})
+			
 			for(var i=0;i<obj.length;i++){
 			document.getElementById('beingRepairedTable').innerHTML+=`
 									<tr id="label1">					
